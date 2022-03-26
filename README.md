@@ -25,6 +25,14 @@ An `example.env` file is included as a template for the `.env` file, this can be
 
 - `docker compose up --build`
 
+### Sequelize (ORM)
+
+This project uses Sequelize as an ORM, details around migrations can be found here: https://sequelize.org/master/manual/migrations.html
+
+To create a new migration file:
+
+`npx sequelize-cli migration:create --migrations-path src/services/db/migrations --name [migration name]`
+
 ## Instructions
 
 This sample project is set up to manage Users in a postgres database and fetch artists from a 3rd party service (Discogs).
