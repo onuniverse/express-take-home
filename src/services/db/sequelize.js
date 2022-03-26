@@ -18,8 +18,8 @@ const sequelize = new Sequelize(databaseUrl, {
   },
   define: {
     paranoid: true,
-    timestamps: true,
-    underscored: true,
+    timestamps: false,
+    underscored: false,
     freezeTableName: true,
   },
   retry: {

@@ -1,14 +1,14 @@
 const { paginate, findOneOrError, createOrUpdate } = require("../functions")
 const { sequelize } = require("../sequelize")
 
+// FIXME: Get migrations working
+// FIXME: Add README comments for how to make new migrations
 const models = {
-  // DomainInstruction: require("./domain-instruction")(sequelize),
+  User: require("./user")(sequelize),
 }
 
 Object.values(models).forEach((Model) => {
-  paginate(Model)
   findOneOrError(Model)
-  createOrUpdate(Model)
 
   if (Model.associate) {
     Model.associate(models)

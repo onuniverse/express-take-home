@@ -1,0 +1,6 @@
+const path = require("path");
+
+module.exports = {
+  "migrations-path": path.resolve("src", "services", "db", "migrations"),
+  "url": "postgres://postgres:password@host.docker.internal:5432/postgres",
+}

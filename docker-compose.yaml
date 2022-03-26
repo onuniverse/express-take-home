@@ -17,8 +17,6 @@ services:
     restart: always
     ports:
       - "5432:5432"
-    volumes:
-      - local-db-data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD", "/usr/local/bin/pg_isready", "-U", "postgres"]
       interval: 5s
@@ -27,6 +25,3 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
-volumes:
-  local-db-data:
-    driver: local

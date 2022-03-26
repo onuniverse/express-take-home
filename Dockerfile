@@ -13,10 +13,11 @@ COPY --from=dependencies /usr/src/app/node_modules ./node_modules/
 
 COPY package.json .
 COPY index.js .
+COPY .sequelizerc .
 COPY src/ ./src/
 
 USER node
 
 EXPOSE 8080
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "launch"]
